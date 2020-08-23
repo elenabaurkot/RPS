@@ -17,6 +17,10 @@ header {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 0;
+}
+
 .dot {
   height: 10px;
   width: 10px;
@@ -25,4 +29,51 @@ header {
   display: inline-block;
   border: 1.2px black solid;
   vertical-align: middle;
+}
+
+.logo {
+  background-image: url(https://res.cloudinary.com/dsxuuory9/image/upload/v1598162541/random/rock%20paper%20scissors/Daco_5360461_umwyek.png);
+  height: 8rem;
+  width: 8rem;
+  display: block;
+  margin: 8px auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+  transition: 0.7s ease-in-out;
+}
+
+.flex-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.game-container {
+  /* height: 60vh; */
+  text-align: center;
+  margin: 5% 0;
+}
+
+.hand {
+  width: 40%;
+  height: fit-content;
+  display: inline-block;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  vertical-align: middle !important;
+}
+
+.hand-pic {
+  width: 35%;
+  height: 35%;
+  display: inline-block;
+}
+
+.right {
+  transform: rotate(180deg);
 }
