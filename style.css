@@ -9,16 +9,18 @@ body {
 }
 
 header {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Amatic SC', sans-serif;
   font-size: 1.8rem;
   letter-spacing: 0.3rem;
   color: white;
   text-shadow: -1.2px 0 black, 0 1.2px black, 1.2px 0 black, 0 -1.2px black;
   text-align: center;
+  margin-top: 0;
 }
 
-h1 {
+.game-header {
   margin-bottom: 0;
+  margin-top: 3%;
 }
 
 .dot {
@@ -54,7 +56,7 @@ h1 {
 }
 
 /* Rules DIV */
-.rules-container {
+.start-container {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.65);
   width: 95%;
@@ -65,7 +67,7 @@ h1 {
   margin-left: auto;
   margin-bottom: 100px;
 }
-.rules-header {
+.start-header {
   padding-top: 5%;
   padding-bottom: 2%;
   font-family: 'Amatic SC', sans-serif;
@@ -77,14 +79,29 @@ h1 {
 .rules-explained {
   width: 95%;
   padding: 5px;
-  padding-bottom: 5%;
-  margin-top: 0;
+  margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.03em;
   line-height: 1.7em;
   font-size: 1.2em;
-  margin-right: auto;
-  margin-left: auto;
+}
+.next-button {
+  font-size: 1.6em;
+  font-family: 'Amatic SC', sans-serif;
+  letter-spacing: 0.2em;
+  margin-top: 10px;
+  margin-bottom: 5%;
+  width: auto;
+  padding: 0.6% 3.5%;
+  border-radius: 12px;
+  border: 1.5px rgb(211, 205, 231) solid;
+  background-color: rgb(225, 230, 245);
+  font-weight: bold !important;
+  outline-color: white;
+}
+.next-button:hover {
+  background-color: cornflowerblue;
+  color: white;
 }
 
 /* Game container div */
@@ -118,15 +135,18 @@ h1 {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 600px) {
-  .rules-container {
+  .start-container {
     width: 90%;
   }
   .rules-explained {
     width: 90%;
     font-size: 1.4em;
   }
-  .rules-header {
+  .start-header {
     font-size: 2.3em;
+  }
+  .game-header {
+    margin-top: 4%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -134,7 +154,6 @@ h1 {
     font-size: 2rem;
     letter-spacing: 0.45rem;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
-    padding-top: 5%;
   }
   .dot {
     height: 8px;
@@ -146,13 +165,13 @@ h1 {
     width: 7rem;
     margin: 7px auto;
   }
-  .rules-header {
+  .start-header {
     font-size: 2.4em;
   }
   .rules-explained {
     font-size: 1.5em;
   }
-  .rules-container {
+  .start-container {
     width: 80%;
   }
 }
@@ -173,7 +192,7 @@ h1 {
     width: 8rem;
     margin: 8px auto;
   }
-  .rules-header {
+  .start-header {
     font-size: 2.7em;
   }
   .rules-explained {
@@ -181,10 +200,10 @@ h1 {
   }
 }
 @media screen and (min-width: 1024px) {
-  .rules-container {
+  .start-container {
     width: 70%;
   }
-  .rules-header {
+  .start-header {
     font-size: 3em;
   }
   .rules-explained {

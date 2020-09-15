@@ -14,23 +14,28 @@
   <body>
     <!-- Page Header -->
     <header>
-      <h1>
+      <h1 class="game-header">
         Rock <span class="dot"></span> Paper <span class="dot"></span> Scissors
       </h1>
       <span class="logo"></span>
     </header>
 
     <!-- Game rules container -->
-    <div class="rules-container">
-      <h2 class="rules-header">How to Play</h2>
+    <div id="rules-container" class="start-container hide">
+      <h2 class="start-header">How to Play</h2>
       <p class="rules-explained">
         Select rock, paper or scissors. The computer will also select. Rock
         beats scissors, scissors beats paper, and paper beats rock. Best out of
         three wins, good luck!
       </p>
+      <button class="next-button">Next</button>
 
       <!-- Inside this div put a div that contains three buttons which are images of rock paper and scissors
       On click it should alert you selected X and then could use timer to wait one or two seconds until adding hide class to this div and removing hide class from hands div -->
+    </div>
+
+    <div id="select-container" class="start-container">
+      <h2 class="start-header">Choose Your Weapon</h2>
     </div>
 
     <!-- Game Container (Rock match hands) -->
