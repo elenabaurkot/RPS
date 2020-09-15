@@ -55,11 +55,10 @@ h1 {
 
 /* Rules DIV */
 .rules-container {
-  display: relative;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.65);
   width: 95%;
-  min-height: 45vh;
+  min-height: 40vh;
   height: fit-content;
   border-radius: 10px;
   margin-right: auto;
@@ -67,7 +66,8 @@ h1 {
   margin-bottom: 100px;
 }
 .rules-header {
-  padding-top: 2%;
+  padding-top: 5%;
+  padding-bottom: 2%;
   font-family: 'Amatic SC', sans-serif;
   letter-spacing: 0.05em;
   font-size: 2.2em;
@@ -134,6 +134,7 @@ h1 {
     font-size: 2rem;
     letter-spacing: 0.45rem;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+    padding-top: 5%;
   }
   .dot {
     height: 8px;
