@@ -21,7 +21,7 @@
     </header>
 
     <!-- Game rules container -->
-    <div id="rules-container" class="start-container hide">
+    <div id="rules-container" class="start-container">
       <h2 class="start-header">How to Play</h2>
       <p class="rules-explained">
         Select rock, paper or scissors. The computer will also select. Rock
@@ -29,17 +29,46 @@
         three wins, good luck!
       </p>
       <button class="next-button">Next</button>
+    </div>
 
+    <!-- Game Selection Container -->
+    <div id="select-container" class="start-container">
+      <h2 class="start-header">Choose Your Weapon</h2>
+      <div class="flex-container">
+        <!-- Rock choice -->
+        <div class="selection">
+          <img
+            src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164398/random/rock%20paper%20scissors/pngkit_scissors-icon-png_2077319_qaw7tw.png"
+            alt="rock"
+            class="img-select rock"
+          />
+          <p class="selection-text">Rock</p>
+        </div>
+        <!-- Paper choice -->
+        <div class="selection">
+          <img
+            src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164447/random/rock%20paper%20scissors/Daco_1650091_fxncw1.png"
+            alt="paper"
+            class="img-select paper"
+          />
+          <p class="selection-text">Paper</p>
+        </div>
+        <!-- Scissors choice -->
+        <div class="selection">
+          <img
+            src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164611/random/rock%20paper%20scissors/Daco_5357819_glggos.png"
+            alt="scissors"
+            class="img-select scissors"
+          />
+          <p class="selection-text">Scissors</p>
+        </div>
+      </div>
       <!-- Inside this div put a div that contains three buttons which are images of rock paper and scissors
       On click it should alert you selected X and then could use timer to wait one or two seconds until adding hide class to this div and removing hide class from hands div -->
     </div>
 
-    <div id="select-container" class="start-container">
-      <h2 class="start-header">Choose Your Weapon</h2>
-    </div>
-
     <!-- Game Container (Rock match hands) -->
-    <div class="rocks game-container flex-container√ hide">
+    <div class="rocks game-container flex-container√">
       <div class="hand left">
         <img
           class="hand-pic"

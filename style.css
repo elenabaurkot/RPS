@@ -52,7 +52,9 @@ header {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Rules DIV */
@@ -104,6 +106,22 @@ header {
   color: white;
 }
 
+/* Game Selection div */
+.selection {
+  padding-top: 5%;
+}
+.selection-text {
+  background-color: rgba(145, 141, 141, 0.652);
+  position: relative;
+  bottom: 0;
+}
+.rock {
+  width: 26% !important;
+}
+.img-select {
+  height: auto;
+  width: 30%;
+}
 /* Game container div */
 .game-container {
   text-align: center;
@@ -148,6 +166,9 @@ header {
   .game-header {
     margin-top: 4%;
   }
+  /* .flex-container {
+    flex-direction: row;
+  } */
 }
 @media screen and (min-width: 768px) {
   header {
