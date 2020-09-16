@@ -108,19 +108,33 @@ header {
 
 /* Game Selection div */
 .selection {
+  width: 90%;
   padding-top: 5%;
+  border: 1px solid grey;
+  background-color: rgb(225, 230, 245);
+  border-radius: 10px;
+  margin-bottom: 3%;
+}
+.selection:hover {
+  background-color: cornflowerblue;
+  color: white;
 }
 .selection-text {
-  background-color: rgba(145, 141, 141, 0.652);
   position: relative;
   bottom: 0;
-}
-.rock {
-  width: 26% !important;
+  font-family: 'Amatic SC', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
 }
 .img-select {
   height: auto;
-  width: 30%;
+  width: 20%;
+}
+.paper {
+  padding-top: 2% !important;
+}
+.rock {
+  padding-top: 3.5% !important;
 }
 /* Game container div */
 .game-container {
@@ -166,9 +180,12 @@ header {
   .game-header {
     margin-top: 4%;
   }
-  /* .flex-container {
+  .flex-container {
     flex-direction: row;
-  } */
+  }
+  .selection {
+    width: 30%;
+  }
 }
 @media screen and (min-width: 768px) {
   header {
