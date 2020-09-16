@@ -28,11 +28,11 @@
         beats scissors, scissors beats paper, and paper beats rock. Best out of
         three wins, good luck!
       </p>
-      <button class="next-button">Next</button>
+      <button id="next-button" class="next-button">Next</button>
     </div>
 
     <!-- Game Selection Container -->
-    <div id="select-container" class="start-container">
+    <div id="select-container" class="start-container hide">
       <h2 class="start-header">Choose Your Weapon</h2>
       <div class="flex-container">
         <!-- Rock choice -->
@@ -63,12 +63,10 @@
           <p class="selection-text">Scissors</p>
         </div>
       </div>
-      <!-- Inside this div put a div that contains three buttons which are images of rock paper and scissors
-      On click it should alert you selected X and then could use timer to wait one or two seconds until adding hide class to this div and removing hide class from hands div -->
     </div>
 
     <!-- Game Container (Rock match hands) -->
-    <div class="rocks game-container flex-container√">
+    <div class="rocks game-container flex-container√ hide">
       <div class="hand left">
         <img
           class="hand-pic"
