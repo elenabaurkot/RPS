@@ -136,6 +136,20 @@ header {
 .rock {
   padding-top: 3.5% !important;
 }
+.modal {
+  position: absolute;
+  bottom: 50%;
+  text-align: center !important;
+  align-items: center !important;
+  left: 37.3%;
+  z-index: 1;
+  background-color: rgba(172, 255, 47, 0.824);
+  height: 20vh;
+  width: 25%;
+  vertical-align: middle !important;
+  border-radius: 30px;
+}
+
 /* Game container div */
 .game-container {
   text-align: center;

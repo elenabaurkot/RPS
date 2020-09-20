@@ -36,7 +36,7 @@
       <h2 class="start-header">Choose Your Weapon</h2>
       <div class="flex-container">
         <!-- Rock choice -->
-        <div class="selection rock">
+        <div class="selection rock" id="rock">
           <img
             src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164398/random/rock%20paper%20scissors/pngkit_scissors-icon-png_2077319_qaw7tw.png"
             alt="rock"
@@ -45,7 +45,7 @@
           <p class="selection-text">Rock</p>
         </div>
         <!-- Paper choice -->
-        <div class="selection paper">
+        <div class="selection paper" id="paper">
           <img
             src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164447/random/rock%20paper%20scissors/Daco_1650091_fxncw1.png"
             alt="paper"
@@ -54,7 +54,7 @@
           <p class="selection-text">Paper</p>
         </div>
         <!-- Scissors choice -->
-        <div class="selection scissors">
+        <div class="selection scissors" id="scissors">
           <img
             src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164611/random/rock%20paper%20scissors/Daco_5357819_glggos.png"
             alt="scissors"
@@ -62,6 +62,9 @@
           />
           <p class="selection-text">Scissors</p>
         </div>
+      </div>
+      <div class="modal hide" id="selection-modal">
+        <p>You chose <span id="game-choice"></span>! Let's play!</p>
       </div>
     </div>
 
@@ -98,4 +101,7 @@
   5. Score should be updated and user can select again 
 
   6. Best out of three, so after three the game should ask the user if they want to play again if so, start back over, if not, thanks for playing 
+
+
+  -There should also be the score and the round at the top /bottom of the pick page and the game shooting page,
  -->
