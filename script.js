@@ -29,7 +29,7 @@ function choiceMade(event) {
     selectionModal.classList.remove('hide');
   }
   // In 2.5 seconds the function to show the game container is called
-  setTimeout(hideSelectShowGame, 2500);
+  setTimeout(hideSelectShowGame, 2100);
 }
 
 // Click functions
