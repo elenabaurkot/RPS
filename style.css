@@ -174,8 +174,16 @@ header {
 
 .hand-pic {
   width: 35%;
-  height: 35%;
+  height: auto;
   display: inline-block;
+}
+
+.hand-text {
+  font-size: 1.5em;
+  font-family: 'Amatic SC', sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10%;
 }
 
 .right {
@@ -233,6 +241,9 @@ header {
   .start-container {
     width: 80%;
   }
+  .hand-text {
+    font-size: 2em;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -257,6 +268,9 @@ header {
   .rules-explained {
     width: 85%;
   }
+  .hand-text {
+    font-size: 2.2em;
+  }
 }
 @media screen and (min-width: 1024px) {
   .start-container {
@@ -268,5 +282,8 @@ header {
   .rules-explained {
     font-size: 1.8em;
     line-height: 1.7em;
+  }
+  .hand-text {
+    font-size: 2.5em;
   }
 }

@@ -15,6 +15,7 @@ function hideSelectShowGame() {
   selectionModal.classList.add('hide');
   selectContainer.classList.add('hide');
   gameContainer.classList.remove('hide');
+  displayChoice();
 }
 
 // When user selects their choice it alerts them of their selection and brings them to the game screen
@@ -27,10 +28,30 @@ function choiceMade(event) {
   if (id === 'rock' || id === 'paper' || id === 'scissors') {
     gameChoice.textContent = id;
     selectionModal.classList.remove('hide');
+
+    localStorage.setItem('userChoice', id);
   }
   // In 2.5 seconds the function to show the game container is called
   setTimeout(hideSelectShowGame, 2100);
 }
+
+// Function to display user and computer game choice
+function displayChoice() {
+  var userChoice = localStorage.getItem('userChoice');
+
+  // might have to set interval with manual loop to make the hands jump three times
+
+  // after bouncing three times, should display images of picks
+
+  // then should alert user, "you chose X, comp chose X, X win "
+
+  // Not actually going to use this
+  setTimeout(function () {
+    alert(userChoice);
+  }, 1000);
+}
+
+// should have function to increase score and round
 
 // Click functions
 nextButton.addEventListener('click', nextToSelect);
