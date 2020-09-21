@@ -68,6 +68,15 @@ function choicesMade(event) {
   console.log(`compPick = ${cPick}`);
   console.log(`userPick = ${uPick}`);
 
+  // Set score to to proper score based on local storage -- need this for when a new round is started
+  let cScore = localStorage.getItem('cScore');
+  let uScore = localStorage.getItem('uScore');
+  // Update score
+  let compScore = document.querySelector('#comp-score');
+  let userScore = document.querySelector('#user-score');
+  compScore.textContent = cScore;
+  userScore.textContent = uScore;
+
   // In 1.5 seconds the function to show the game container is called
   setTimeout(hideSelectShowGame, 1500);
 }
@@ -202,6 +211,6 @@ endGameButton.addEventListener('click', function () {
 // Click function if user wants to play again
 playAgainButton.addEventListener('click', function () {
   endContainer.classList.add('hide');
-  rulesContainer.classList.remove('hide');
+  selectContainer.classList.remove('hide');
   reset();
 });
