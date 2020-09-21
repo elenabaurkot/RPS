@@ -87,7 +87,7 @@ header {
   line-height: 1.7em;
   font-size: 1.2em;
 }
-.next-button {
+.game-button {
   font-size: 1.6em;
   font-family: 'Amatic SC', sans-serif;
   letter-spacing: 0.2em;
@@ -101,7 +101,7 @@ header {
   font-weight: bold !important;
   outline-color: white;
 }
-.next-button:hover {
+.game-button:hover {
   background-color: cornflowerblue;
   color: white;
 }
@@ -215,9 +215,13 @@ header {
   display: none;
 }
 
-row {
+.row {
   width: 100%;
   display: block;
+}
+.end-button {
+  margin-left: 1% !important;
+  margin-right: 1% !important;
 }
 
 /* MEDIA QUERIES */

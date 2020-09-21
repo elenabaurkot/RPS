@@ -28,7 +28,7 @@
         beats scissors, scissors beats paper, and paper beats rock. Best out of
         three wins, good luck!
       </p>
-      <button id="next-button" class="next-button">Next</button>
+      <button id="next-button" class="game-button">Next</button>
     </div>
 
     <!-- Game Selection Container -->
@@ -96,24 +96,25 @@
         </p>
       </div>
     </div>
-
-    <div class="flex-container hide" id="end-container">
-      <row>
-        <p><span id="winner"></span>won this time!</p>
-      </row>
-      <row>
-        <p>
-          The final score was Computer: <span id="comp-final"></span> User:
-          <span id="user-final"></span>
-        </p>
-      </row>
-      <row>
-        <p>Do you want to play again</p>
-      </row>
-      <row>
-        <button>Yes</button>
-        <button>No</button>
-      </row>
+    <!-- End Container -->
+    <div class="start-container hide" id="end-container">
+      <p class="rules-explained row">
+        <span id="winner"></span> won this time!
+      </p>
+      <p class="rules-explained row"><u>Final Score</u></p>
+      <p class="rules-explained row">
+        <strong>Computer:</strong> <span id="comp-final"></span>
+        <strong>User:</strong> <span id="user-final"></span>
+      </p>
+      <p class="rules-explained row">Do you want to play again</p>
+      <div class="row">
+        <button class="game-button end-button" id="restart-button">Yes</button>
+        <button class="game-button end-button" id="end-game-button">No</button>
+      </div>
+    </div>
+    <!-- Game over container -->
+    <div class="start-container hide" id="game-over">
+      <p class="start-header">Thanks for playing!</p>
     </div>
     <script src="script.js"></script>
   </body>

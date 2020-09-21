@@ -1,11 +1,14 @@
-var nextButton = document.querySelector('#next-button');
-var rulesContainer = document.querySelector('#rules-container');
-var selectContainer = document.querySelector('#select-container');
-var selectionModal = document.querySelector('#selection-modal');
-var gameContainer = document.querySelector('#game-container');
-var endContainer = document.querySelector('#end-container');
+const nextButton = document.querySelector('#next-button');
+const rulesContainer = document.querySelector('#rules-container');
+const selectContainer = document.querySelector('#select-container');
+const selectionModal = document.querySelector('#selection-modal');
+const gameContainer = document.querySelector('#game-container');
+const endContainer = document.querySelector('#end-container');
 const userChoiceImage = document.querySelector('#user-hand');
 const compChoiceImage = document.querySelector('#comp-hand');
+const endGameButton = document.querySelector('#end-game-button');
+const playAgainButton = document.querySelector('#restart-button');
+const gameOverScreen = document.querySelector('#game-over');
 localStorage.setItem('cScore', 0);
 localStorage.setItem('uScore', 0);
 localStorage.setItem('round', 1);
@@ -28,14 +31,10 @@ function hideSelectShowGame() {
     'https://res.cloudinary.com/dsxuuory9/image/upload/v1598164398/random/rock%20paper%20scissors/pngkit_scissors-icon-png_2077319_qaw7tw.png'
   );
 
-  if (round < 4) {
-    selectionModal.classList.add('hide');
-    selectContainer.classList.add('hide');
-    gameContainer.classList.remove('hide');
-    playRound();
-  } else {
-    endGame();
-  }
+  selectionModal.classList.add('hide');
+  selectContainer.classList.add('hide');
+  gameContainer.classList.remove('hide');
+  playRound();
 }
 
 // Function to hide the game container and show the selection container
@@ -44,9 +43,10 @@ function hideGameShowSelect() {
   gameContainer.classList.add('hide');
 }
 
+// Function to show end of game screen
 function showEndScreen() {
   endContainer.classList.remove('hide');
-  selectContainer.classList.add('hide');
+  gameContainer.classList.add('hide');
 }
 
 // FUNCTION TO GET USER AND COMP PICKS
@@ -151,25 +151,57 @@ function playRound() {
     console.log(`round = ${round}`);
     compScore.textContent = cScore;
     userScore.textContent = uScore;
-    currentRound.textContent = round;
+    // currentRound.textContent = round;
   }, 3300);
 
   // Hide game screen, show user selection screen for them to pick again
   setTimeout(function () {
-    hideGameShowSelect();
-  }, 6000);
+    if (round < 4 && cScore < 2 && uScore < 2) {
+      hideGameShowSelect();
+    } else {
+      endGame();
+    }
+  }, 5000);
 }
 
 function endGame() {
+  const cFinal = document.querySelector('#comp-final');
+  const uFinal = document.querySelector('#user-final');
+  const winner = document.querySelector('#winner');
+  let cScore = localStorage.getItem('cScore');
+  let uScore = localStorage.getItem('uScore');
+  let gameWinner;
+
+  if (cScore > uScore) {
+    gameWinner = 'Computer';
+  } else {
+    gameWinner = 'You';
+  }
+
+  cFinal.textContent = cScore;
+  uFinal.textContent = uScore;
+  winner.textContent = gameWinner;
   showEndScreen();
-  // Show current score
-  // reset score and round in local storage to zero (might have to do this on button click instead of in end game)
-  // If user wants to play again, hide the end screen and show the start screen
-  // If not, nice playing
+}
+
+function reset() {
+  localStorage.setItem('cScore', 0);
+  localStorage.setItem('uScore', 0);
+  localStorage.setItem('round', 1);
 }
 
 // Click functions
 nextButton.addEventListener('click', nextToSelect);
 selectContainer.addEventListener('click', choicesMade);
-
-// Write out logic for when round is greater than 3 reset everything and show end screen
+// Click function if user doesn't want to play again
+endGameButton.addEventListener('click', function () {
+  endContainer.classList.add('hide');
+  gameOverScreen.classList.remove('hide');
+  reset();
+});
+// Click function if user wants to play again
+playAgainButton.addEventListener('click', function () {
+  endContainer.classList.add('hide');
+  rulesContainer.classList.remove('hide');
+  reset();
+});
