@@ -72,40 +72,49 @@
 
     <!-- Game Container (Rock match hands) -->
     <div class="rocks game-container flex-container√ hide" id="game-container">
+      <p class="game-text">Round: <span id="round">1</span></p>
       <div class="hand left">
         <img
+          id="user-hand"
           class="hand-pic bounce"
           src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164398/random/rock%20paper%20scissors/pngkit_scissors-icon-png_2077319_qaw7tw.png"
           alt="hand"
         />
-        <p class="hand-text">User</p>
+        <p class="game-text hand-text">
+          User Score: <span id="user-score">0</span>
+        </p>
       </div>
       <div class="hand">
         <img
+          id="comp-hand"
           class="hand-pic bounce"
           src="https://res.cloudinary.com/dsxuuory9/image/upload/v1598164483/random/rock%20paper%20scissors/PngItem_2122744_idavl7.png"
           alt="hand"
         />
-        <p class="hand-text">Computer</p>
+        <p class="game-text hand-text">
+          Computer Score: <span id="comp-score">0</span>
+        </p>
       </div>
+    </div>
+
+    <div class="flex-container hide" id="end-container">
+      <row>
+        <p><span id="winner"></span>won this time!</p>
+      </row>
+      <row>
+        <p>
+          The final score was Computer: <span id="comp-final"></span> User:
+          <span id="user-final"></span>
+        </p>
+      </row>
+      <row>
+        <p>Do you want to play again</p>
+      </row>
+      <row>
+        <button>Yes</button>
+        <button>No</button>
+      </row>
     </div>
     <script src="script.js"></script>
   </body>
 </html>
-
-<!-- 
-  1. Starting screen should have user select rock paper or scissors
-
-  2. On click of their choice, starting screen is hidden, and rock hand screen appears, key frames should make rocks bounce up and down with 3, 2, 1, count down
-
-  3. The users selected choice should appear 
-
-  4. Based on math random choice, the computer should show either rock paper or scissor
-
-  5. Score should be updated and user can select again 
-
-  6. Best out of three, so after three the game should ask the user if they want to play again if so, start back over, if not, thanks for playing 
-
-
-  -There should also be the score and the round at the top /bottom of the pick page and the game shooting page,
- -->

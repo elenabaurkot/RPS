@@ -160,7 +160,7 @@ header {
 /* Game container div */
 .game-container {
   text-align: center;
-  margin: 5% 0;
+  margin: 20px 0;
 }
 
 .hand {
@@ -197,12 +197,14 @@ header {
   }
 }
 
-.hand-text {
+.game-text {
   font-size: 1.5em;
   font-family: 'Amatic SC', sans-serif;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 10%;
+  margin: 0 auto 30px auto;
+}
+
+.hand-text {
+  margin-top: 30px !important;
 }
 
 .right {
@@ -211,6 +213,11 @@ header {
 
 .hide {
   display: none;
+}
+
+row {
+  width: 100%;
+  display: block;
 }
 
 /* MEDIA QUERIES */
@@ -260,7 +267,7 @@ header {
   .start-container {
     width: 80%;
   }
-  .hand-text {
+  .game-text {
     font-size: 2em;
   }
 }
@@ -287,7 +294,7 @@ header {
   .rules-explained {
     width: 85%;
   }
-  .hand-text {
+  .game-text {
     font-size: 2.2em;
   }
   @keyframes bounce {
@@ -313,7 +320,7 @@ header {
     font-size: 1.8em;
     line-height: 1.7em;
   }
-  .hand-text {
+  .game-text {
     font-size: 2.5em;
   }
 }
