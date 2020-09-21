@@ -32,7 +32,7 @@ function choiceMade(event) {
     localStorage.setItem('userChoice', id);
   }
   // In 2.5 seconds the function to show the game container is called
-  setTimeout(hideSelectShowGame, 2100);
+  setTimeout(hideSelectShowGame, 1800);
 }
 
 // Function to display user and computer game choice

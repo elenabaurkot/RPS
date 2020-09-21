@@ -143,7 +143,7 @@ header {
   align-items: center !important;
   left: 27%;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: rgba(255, 255, 255);
   border: 1px solid rgba(92, 92, 92, 0.817);
   height: 30vh;
   width: 45%;
@@ -176,6 +176,25 @@ header {
   width: 35%;
   height: auto;
   display: inline-block;
+  animation-duration: 0.75s;
+  animation-delay: 0.3s;
+  animation-iteration-count: 4;
+  transform-origin: top;
+}
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: ease-in-out;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .hand-text {
@@ -270,6 +289,17 @@ header {
   }
   .hand-text {
     font-size: 2.2em;
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-75px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 @media screen and (min-width: 1024px) {
