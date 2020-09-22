@@ -9,6 +9,7 @@ const endGameButton = document.querySelector('#end-game-button');
 const playAgainButton = document.querySelector('#restart-button');
 const gameOverScreen = document.querySelector('#game-over');
 const playButton = document.querySelector('#play-button');
+const outcomeModal = document.querySelector('#outcome-modal');
 localStorage.setItem('cScore', 0);
 localStorage.setItem('uScore', 0);
 localStorage.setItem('round', 1);
@@ -107,7 +108,7 @@ function displayPicks() {
         'https://res.cloudinary.com/dsxuuory9/image/upload/a_152/v1600703838/random/rock%20paper%20scissors/compsciss_vxnu7a.png'
       );
     }
-  }, 3100);
+  }, 3070);
 }
 
 // Function for Countdown
@@ -132,10 +133,17 @@ function countDown() {
       i++;
     }
   }, 750);
-
+  // Hide count modal
   setTimeout(function () {
     countModal.classList.add('hide');
   }, 3300);
+  // Tell whether user lost, won or tied
+  setTimeout(function () {
+    outcomeModal.classList.remove('hide');
+  }, 3350);
+  setTimeout(function () {
+    outcomeModal.classList.add('hide');
+  }, 4400);
 }
 
 // Function to play the round
@@ -159,6 +167,11 @@ function playRound() {
 
   // In case of tie
   if (uPick === cPick) {
+    outcome.textContent = 'Tie';
+    outcomeModal.setAttribute(
+      'style',
+      'background-color: rgba(255, 255, 255, 0.5);'
+    );
     // All cases where user wins
   } else if (
     (uPick === 'rock' && cPick === 'scissors') ||
@@ -167,10 +180,17 @@ function playRound() {
   ) {
     uScore++;
     round++;
+    outcome.textContent = 'Win!';
+    outcomeModal.setAttribute(
+      'style',
+      'background-color: rgba(113, 213, 113, 0.81);;'
+    );
     // All other possible cases computer wins
   } else {
     cScore++;
     round++;
+    outcome.textContent = 'Loss';
+    outcomeModal.setAttribute('style', 'background-color: rgb(225, 120, 120);');
   }
   // Set current scores and round to local storage
   localStorage.setItem('cScore', cScore);
@@ -186,7 +206,6 @@ function playRound() {
     console.log(`round = ${round}`);
     compScore.textContent = cScore;
     userScore.textContent = uScore;
-    // currentRound.textContent = round;
   }, 3200);
 
   // Hide game screen, show user selection screen for them to pick again
