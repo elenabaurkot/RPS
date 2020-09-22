@@ -223,7 +223,13 @@ header {
   margin-left: 1% !important;
   margin-right: 1% !important;
 }
-
+#end-container {
+  padding-top: 60px !important;
+  padding-bottom: 20px !important;
+}
+.end-words {
+  line-height: 52px !important;
+}
 /* MEDIA QUERIES */
 @media screen and (min-width: 600px) {
   .start-container {
