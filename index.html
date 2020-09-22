@@ -63,11 +63,6 @@
           <p class="selection-text">Scissors</p>
         </div>
       </div>
-      <div class="modal hide" id="selection-modal">
-        <p class="modal-center-text">
-          You chose <span id="game-choice"></span>! <br />Let's play!
-        </p>
-      </div>
     </div>
 
     <!-- Game Container (Rock match hands) -->
@@ -95,6 +90,12 @@
           Computer Score: <span id="comp-score">0</span>
         </p>
       </div>
+      <div class="modal hide" id="count-modal">
+        <p class="modal-center-text"><span id="countdown">Rock</span></p>
+      </div>
+      <div class="modal hide" id="outcome-modal">
+        <p class="modal-center-text"><span id="outcome">Winner</span></p>
+      </div>
     </div>
     <!-- End Container -->
     <div class="start-container hide" id="end-container">
@@ -115,7 +116,7 @@
     <!-- Game over container -->
     <div class="start-container hide" id="game-over">
       <p class="start-header">Thanks for playing!</p>
-      <button class="game-button">Click to Play Again</button>
+      <button class="game-button" id="play-button">Click to Play Again</button>
     </div>
     <script src="script.js"></script>
   </body>

@@ -1,7 +1,6 @@
 const nextButton = document.querySelector('#next-button');
 const rulesContainer = document.querySelector('#rules-container');
 const selectContainer = document.querySelector('#select-container');
-const selectionModal = document.querySelector('#selection-modal');
 const gameContainer = document.querySelector('#game-container');
 const endContainer = document.querySelector('#end-container');
 const userChoiceImage = document.querySelector('#user-hand');
@@ -9,6 +8,7 @@ const compChoiceImage = document.querySelector('#comp-hand');
 const endGameButton = document.querySelector('#end-game-button');
 const playAgainButton = document.querySelector('#restart-button');
 const gameOverScreen = document.querySelector('#game-over');
+const playButton = document.querySelector('#play-button');
 localStorage.setItem('cScore', 0);
 localStorage.setItem('uScore', 0);
 localStorage.setItem('round', 1);
@@ -31,7 +31,6 @@ function hideSelectShowGame() {
     'https://res.cloudinary.com/dsxuuory9/image/upload/v1598164398/random/rock%20paper%20scissors/pngkit_scissors-icon-png_2077319_qaw7tw.png'
   );
 
-  selectionModal.classList.add('hide');
   selectContainer.classList.add('hide');
   gameContainer.classList.remove('hide');
   playRound();
@@ -56,8 +55,6 @@ function choicesMade(event) {
   // grabs the id or the id of the parent id of the clicked choice (in case the p text is clicked)
   var uPick = event.target.id || event.target.parentElement.id;
   if (uPick === 'rock' || uPick === 'paper' || uPick === 'scissors') {
-    gameChoice.textContent = uPick;
-    selectionModal.classList.remove('hide');
     localStorage.setItem('userPick', uPick);
   }
   // Get computer choice
@@ -77,8 +74,7 @@ function choicesMade(event) {
   compScore.textContent = cScore;
   userScore.textContent = uScore;
 
-  // In 1.5 seconds the function to show the game container is called
-  setTimeout(hideSelectShowGame, 1500);
+  hideSelectShowGame();
 }
 
 // FUNCTION TO DISPLAY PICKS
@@ -114,6 +110,34 @@ function displayPicks() {
   }, 3100);
 }
 
+// Function for Countdown
+function countDown() {
+  const countModal = document.querySelector('#count-modal');
+  const count = document.querySelector('#countdown');
+  let countArr = ['Rock', 'Paper', 'Scissors', 'Shoot!'];
+
+  // Time out function to start countdown
+  setTimeout(function () {
+    countModal.classList.remove('hide');
+  }, 300);
+
+  // Code to go through the countArr and display them to the screen
+  let i = 0;
+  var countInterval = setInterval(function () {
+    if (countArr[i] === undefined) {
+      clearInterval(countInterval);
+      count.textContent = 'Rock';
+    } else {
+      count.textContent = countArr[i];
+      i++;
+    }
+  }, 750);
+
+  setTimeout(function () {
+    countModal.classList.add('hide');
+  }, 3300);
+}
+
 // Function to play the round
 function playRound() {
   // Get User and Computer game choices & scores from local storage
@@ -122,27 +146,29 @@ function playRound() {
   let cScore = localStorage.getItem('cScore');
   let uScore = localStorage.getItem('uScore');
   let round = localStorage.getItem('round');
+  let outcome = document.querySelector('#outcome');
   let currentRound = document.querySelector('#round');
-
+  // Set round text to the current round
   currentRound.textContent = round;
 
+  // Function to start countdown
+  countDown();
+
+  // Show user and comp picks
   displayPicks();
 
   // In case of tie
   if (uPick === cPick) {
-    console.log('You tied!');
     // All cases where user wins
   } else if (
     (uPick === 'rock' && cPick === 'scissors') ||
     (uPick === 'paper' && cPick === 'rock') ||
     (uPick === 'scissors' && cPick === 'paper')
   ) {
-    console.log('you win this round');
     uScore++;
     round++;
     // All other possible cases computer wins
   } else {
-    console.log('computer wins this round');
     cScore++;
     round++;
   }
@@ -161,7 +187,7 @@ function playRound() {
     compScore.textContent = cScore;
     userScore.textContent = uScore;
     // currentRound.textContent = round;
-  }, 3300);
+  }, 3200);
 
   // Hide game screen, show user selection screen for them to pick again
   setTimeout(function () {
@@ -212,5 +238,10 @@ endGameButton.addEventListener('click', function () {
 playAgainButton.addEventListener('click', function () {
   endContainer.classList.add('hide');
   selectContainer.classList.remove('hide');
+  reset();
+});
+playButton.addEventListener('click', function () {
+  selectContainer.classList.remove('hide');
+  gameOverScreen.classList.add('hide');
   reset();
 });
